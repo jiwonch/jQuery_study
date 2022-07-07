@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("p").css("background-color", "purple");
+                return false;
+            });
+
+            $("#btn2").click(function(e){
+                e.preventDefault();
+                $("p").css("background-color", "yellow");
+            });
+
+            $("#btn3").click(function(){
+                $("p").css("background-color", "aqua");
+            });
+        });
+    </script>
+</head>
+<body>
+    <a href="http://w3.org/" id="btn1">버튼1</a><br><br>
+    <a href="http://w3.org/" id="btn2">버튼2</a><br><br>
+    <a href="http://w3.org/" id="btn3">버튼3</a><br><br>
+    <p>내용</p>
+</body>
+</html>

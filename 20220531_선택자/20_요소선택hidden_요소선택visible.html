@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function(){
+            $("p:visible").css("border", "1px solid red");
+            // p태그 중에 안보이는 태그를 찾아서 display:block을 시키고 border를 준다
+            $("p:hidden").css("display", "block").css("border", "1px solid green");
+        });
+    </script>
+</head>
+<body>
+    <h1>탐색 선택자</h1>
+    <p>내용1</p>
+    <p style="display: none;">내용2</p>
+</body>
+</html>

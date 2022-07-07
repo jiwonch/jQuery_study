@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .test{
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").remove(".test");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p class="test">This is another paragraph.</p>
+    <p class="test">This is another paragraph.</p>
+    <button>Remove all p elements width class="test"</button>
+</body>
+</html>

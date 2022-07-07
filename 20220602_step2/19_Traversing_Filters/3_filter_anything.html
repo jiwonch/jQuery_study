@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function(){
+                var value = $(this).val().toLowerCase();
+                $("#myDIV *").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) >-1);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>Filter Anything</h2>
+    <p>Type something in the input field to search for a specific text inside the div element with id="myDIV":<p>
+    <input type="text" id="myInput" placeholder="Search..">
+    <br>
+
+    <ul id="myDIV">
+        <p>I am a paragraph.</p>
+        <div>I am a div element inside div.</div>
+        <button>I am a button </button>
+        <button>Another button </button>
+        <p>Another paragraph.</p>
+    </ul>
+</body>
+</html>

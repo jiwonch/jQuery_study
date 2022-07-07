@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(function(){
+            $("h1 a").on({
+                "mouseover focus": function(){
+                    $(this).css("color", "red");
+                },
+                "mouseout blur": function(){
+                    $(this).css("color", "yellow");
+                }
+            });
+
+            // 선택자로 되어 있는데 append가 밑에 있기 때문에 실행이 안됨
+            // 자바스크립트에서는 호이스팅이라는 개념이 있는데, 
+            // 호이스팅은 함수랑 변수에만 해당되기 때문에 여기서는 해당되지 않음.
+            // 만약 이 부분을 실행하고 싶다면 append문을 이 구문보다 올려서 작성해야함
+            $("h2 a").on("mouseover focus", function(){
+                $(this).css("background-color", "yellow");
+            });
+
+            // document로 다 읽고 실행이 되기 때문에 append가 밑에 있더라도 실행됨
+            $(document).on("mouseout blur", "h2 a", function(){
+                $(this).css("background-color", "aqua");
+            });
+
+            // 밑에서 append 함
+            $("h2").append("<a href='#'>생성된 요소</a>");
+        });
+    </script>
+</head>
+<body>
+    <h1><a href="#">버튼</a></h1>
+    <h2></h2>
+</body>
+</html>

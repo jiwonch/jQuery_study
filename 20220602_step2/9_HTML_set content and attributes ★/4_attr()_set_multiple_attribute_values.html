@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#w3s").attr({
+                    "href": "https://www.w3schools.com/jquery/",
+                    "title": "W3Schools jQuery Tutorial"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <p><a href="https://www.w3schools.com" title="some title" id="w3s">W3Schools</a></p>   
+    <button>Change href and title</button>
+    <p>Mouse over the link to see that the href attribute has changed and a title attribute is set.</p>
+</body>
+</html>

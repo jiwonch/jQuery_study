@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li,
+        ul,
+        ol {
+            list-style: none;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        table {
+            box-sizing: border-box;
+        }
+
+        #btn {
+            width: 100%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        #btn button {
+            width: 250px;
+            height: 40px;
+            border: none;
+            color: #333;
+            font-size: 15px;
+            margin: 0 5px;
+            font-weight: bold;
+        }
+
+        .btn1 {
+            background-color: lightpink;
+        }
+
+        .btn2 {
+            background-color: #ffdf40;
+        }
+
+        .btn3 {
+            background-color: red;
+        }
+
+        #musicbox,
+        #musicbox1,
+        #musicbox2 {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -5;
+            display: none;
+        }
+
+        #musicbox iframe,
+        #musicbox1 iframe,
+        #musicbox2 iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        #musicbox .close,
+        #musicbox1 .close,
+        #musicbox2 .close {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 30px;
+            color: #fff;
+            display: none;
+            z-index: 100;
+        }
+
+        .popup {
+            width: 450px;
+            height: 200px;
+            background-color: rgba(200, 200, 200, 0.3);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid lightgray;
+            display: none;
+        }
+
+        .closebtn {
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 5px;
+            display: block;
+            border: 1px solid black;
+            background-color: rgba(238, 238, 238, 0.5);
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="btn">
+        <button class="btn1">IU-LILAX M/V</button>
+        <button class="btn2">이무진-참고사항</button>
+        <button class="btn3">아이들-TOMBOY</button>
+    </div>
+
+    <div id="musicbox" class="youtube" value="m1">
+        <iframe src="https://www.youtube.com/embed/v7bnOxV4jAc?autoplay=1&amp;mute=1" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div class="close">X</div>
+    </div>
+
+    <div id="musicbox1" class="youtube" value="m2">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/eGRaNir7YD4?autoplay=1&amp;mute=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div class="close">X</div>
+    </div>
+
+    <div id="musicbox2" class="youtube" value="m3">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Jh4QFaPmdss?autoplay=1&amp;mute=1"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div class="close">X</div>
+    </div>
+
+    <div class="popup">즐거운 감상되세요. <a href="#" class="closebtn">닫기</a></div>
+
+    <script>
+
+        function buttonYoutube() {
+            $("#btn").hide();
+            $(".popup").hide();
+            $(".popup").show();
+            $(".close").show();
+        }
+
+        $('.btn1').click(function () {
+            buttonYoutube();
+            $("#musicbox").show();
+            $("#musicbox iframe").attr("src", "https://www.youtube.com/embed/v7bnOxV4jAc?autoplay=1&amp;mute=1");
+        });
+
+
+        $('.btn2').click(function () {
+            buttonYoutube();
+            $("#musicbox1").show();
+            $("#musicbox1 iframe").attr("src", "https://www.youtube.com/embed/eGRaNir7YD4?autoplay=1&amp;mute=1");
+        });
+
+        $('.btn3').click(function () {
+            buttonYoutube();
+            $("#musicbox2").show();
+            $("#musicbox2 iframe").attr("src", "https://www.youtube.com/embed/Jh4QFaPmdss?autoplay=1&amp;mute=1");
+        });
+
+        $(".close").click(function () {
+            $(".youtube").hide();
+            $(".popup").hide();
+            $("#btn").show();
+        });
+
+        $(".closebtn").click(function () {
+            $(".popup").hide();
+        });
+    </script>
+</body>
+
+</html>

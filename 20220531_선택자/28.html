@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #menu li{
+            margin: 5px 0;
+        }
+    </style>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- 콘솔확인 -->
+    <script>
+        var arrName = ["갑", "을", "병", "정"];
+
+        $(function(){
+            var arr = arrName.map(function(v, i){
+                console.log(v, i);
+                return v + i;
+            });
+
+            console.log(arr);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
